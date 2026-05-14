@@ -63,34 +63,37 @@ h2.section-title {
 .accent { color: var(--accent); }
 
 /* =========================================================
-   LOADING SCREEN
-   ========================================================= */
-/* =========================================================
-   LOADING SCREEN — remplace l'ancienne section dans style.css
+   LOADING SCREEN — remplace toute la section #tl-loader
+   dans ton style.css
    ========================================================= */
 
    #tl-loader {
     position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: #080b14;       /* légèrement plus bleu que #0d0e12 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background: #080b14;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* PAS de transition ici — elle est appliquée en JS au moment du finish() */
-  }
-  
-  /* Canvas plein écran, derrière tout */
-  #loaderCanvas {
+    opacity: 1;
+    /* PAS de transition ici — appliquée en JS au moment du finish() */
+}
+
+#loaderCanvas {
     display: block;
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
-  }
-  
-  /* Nom + titre en bas, au-dessus du canvas */
-  .loader-brand {
+}
+
+.loader-brand {
     position: absolute;
     bottom: 54px;
     left: 50%;
@@ -99,8 +102,8 @@ h2.section-title {
     pointer-events: none;
     z-index: 2;
     white-space: nowrap;
-  }
-  .loader-name {
+}
+.loader-name {
     display: block;
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.9rem;
@@ -109,8 +112,8 @@ h2.section-title {
     color: rgba(255, 255, 255, 0.72);
     text-transform: uppercase;
     margin-bottom: 5px;
-  }
-  .loader-title {
+}
+.loader-title {
     display: block;
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.68rem;
@@ -118,10 +121,9 @@ h2.section-title {
     letter-spacing: 0.24em;
     color: rgba(140, 160, 210, 0.5);
     text-transform: uppercase;
-  }
-  
-  /* Bouton Skip */
-  .loader-skip {
+}
+
+.loader-skip {
     position: absolute;
     bottom: 26px;
     right: 26px;
@@ -137,13 +139,12 @@ h2.section-title {
     cursor: pointer;
     padding: 8px 6px;
     transition: color 0.3s ease;
-  }
-  .loader-skip:hover {
+}
+.loader-skip:hover {
     color: rgba(165, 180, 252, 0.85);
-  }
-  
-  /* Barre de progression */
-  .loader-progress-track {
+}
+
+.loader-progress-track {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -151,8 +152,8 @@ h2.section-title {
     height: 2px;
     background: rgba(255, 255, 255, 0.05);
     z-index: 3;
-  }
-  .loader-progress-bar {
+}
+.loader-progress-bar {
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, #4f46e5, #818cf8, #38bdf8, #818cf8, #4f46e5);
@@ -160,11 +161,11 @@ h2.section-title {
     animation: loaderShimmer 2.5s linear infinite;
     border-radius: 0 2px 2px 0;
     transition: width 0.12s linear;
-  }
-  @keyframes loaderShimmer {
+}
+@keyframes loaderShimmer {
     0%   { background-position: 100% 0; }
     100% { background-position: -100% 0; }
-  }
+}
 
 /* =========================================================
    CURSEUR PERSONNALISÉ
