@@ -458,12 +458,15 @@ h2.section-title {
 .tl-item:nth-child(odd)  .tl-icon { right: -22px; }
 .tl-item:nth-child(even) .tl-icon { left: -22px; }
 .tl-icon svg { width: 22px; height: 22px; }
-.tl-content { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 22px; box-shadow: var(--shadow); }
-.tl-period {
-    display: inline-block; font-size: 0.8rem; font-weight: 600;
-    color: var(--accent); background: var(--accent-soft);
-    padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+.tl-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.13),
+            0 2px 8px rgba(15, 23, 42, 0.30);
 }
+
 .tl-content h3 { font-size: 1.1rem; margin-bottom: 4px; }
 .tl-content .school { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 8px; }
 .tl-content p { font-size: 0.92rem; color: var(--text-muted); }
